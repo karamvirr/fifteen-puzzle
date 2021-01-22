@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body, button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14pt;
+  text-align: center;
+}
+
+#puzzle-area, p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  width: 80%;
+}
+
+#puzzle-area {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+
+.moveablesquare:hover {
+  border-color: red;
+  color: red;
+  cursor: pointer;
+}
+
+.square {
+  font-size: 40pt;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 94px;
+  width: 94px;
+  border: 3px solid black;
+  position: absolute;
+  background-image: url("background.jpg");
+  transition: all 0.25s ease 0s;
+}
