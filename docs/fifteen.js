@@ -27,7 +27,6 @@
   * column 4 of the grid. At this point, the user is able to interact with and
   * play the game.
   * 
-  * @param  there is no parameter type for this function.
   * @return there is no return type for this function.
   */
   function pageLoad() {
@@ -76,7 +75,7 @@
   * This function is called when the user wants the shuffle the puzzleboard.
   * The puzzleboard is radomly rearranged into a solveable state, avoiding
   * the puzzleboard configurations that are impossible to solve.
-  * @param  there is no parameter type for this function.
+  * 
   * @return there is no return type for this function.
   */
   function shuffle() {
