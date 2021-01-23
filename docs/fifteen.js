@@ -166,7 +166,7 @@
   }
 
   /**
-  * Helper function to get the element by
+  * Helper function to get the element by id.
   * 
   * @param  the string ID of the DOM element to retrieve
   * @return the DOM element denoted by the ID given
