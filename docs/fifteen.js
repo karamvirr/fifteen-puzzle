@@ -1,8 +1,8 @@
 /**
-* This is the fifteen.js file that is associated with the fifteen.html
-* (Fifteen Puzzle) webpage. Handles user interaction and game animation
-* (puzzles pieaces moving around) as the game of Fifteen Puzzle is being played.
-*/
+ * This is the fifteen.js file that is associated with the fifteen.html
+ * (Fifteen Puzzle) webpage. Handles user interaction and game animation
+ * (puzzles pieaces moving around) as the game of Fifteen Puzzle is being played.
+ */
 "use strict";
 (function() {
   // represents the number of random movements required in order for the
@@ -21,14 +21,12 @@
   window.onload = pageLoad;
 
   /**
-  * This function is called when the page first loads to initialize the state
-  * of the game. Tiles are then created and displayed in a 4x4 grid, labeled
-  * from 1 to 15. The board is set up to include an empty square in row 4
-  * column 4 of the grid. At this point, the user is able to interact with and
-  * play the game.
-  * 
-  * @return there is no return type for this function.
-  */
+   * This function is called when the page first loads to initialize the state
+   * of the game. Tiles are then created and displayed in a 4x4 grid, labeled
+   * from 1 to 15. The board is set up to include an empty square in row 4
+   * column 4 of the grid. At this point, the user is able to interact with and
+   * play the game.
+   */
   function pageLoad() {
     let squareArea = $("puzzle-area");
     let max = 4;                      // 4x4 grid
@@ -56,15 +54,15 @@
   }
 
   /**
-  * This function is called whenenver the user hovers his/her mouse over a tile
-  * of the puzzle game. If the tile thats the mouse is hovering over is a moveable
-  * pieace (refer to moveableTile()), style is applied to the tile text/border color
-  * as well as the cursor's appearance for as long as the user hovers over that
-  * tile.
-  * 
-  * @param  the tile of the puzzleboard denoted as 'tile'.
-  * @return there is no return type for this function.
-  */
+   * This function is called whenenver the user hovers his/her mouse over a tile
+   * of the puzzle game. If the tile thats the mouse is hovering over is a moveable
+   * pieace (refer to moveableTile()), style is applied to the tile text/border color
+   * as well as the cursor's appearance for as long as the user hovers over that
+   * tile.
+   * 
+   * @param  the tile of the puzzleboard denoted as 'tile'.
+   * @return there is no return type for this function.
+   */
   function mouseHovering(tile) {
     if(moveableTile(tile)) {
       tile.classList.toggle("moveablesquare");
@@ -72,12 +70,10 @@
   }
 
   /**
-  * This function is called when the user wants the shuffle the puzzleboard.
-  * The puzzleboard is radomly rearranged into a solveable state, avoiding
-  * the puzzleboard configurations that are impossible to solve.
-  * 
-  * @return there is no return type for this function.
-  */
+   * This function is called when the user wants the shuffle the puzzleboard.
+   * The puzzleboard is radomly rearranged into a solveable state, avoiding
+   * the puzzleboard configurations that are impossible to solve.
+   */
   function shuffle() {
     for(let i = 0; i < RANDOM_MOVEMENTS; i++) {
       let selectedTileToMove = randomNeighborSelector(emptyY, emptyX);
@@ -86,14 +82,14 @@
   }
 
   /**
-  * Finds all the neighbors for the given row and column. These neighbors are the
-  * ones that are directly to the left, right, down, and up of the specified
-  * row/column. After that, it will randomly select one of these neighbors and
-  * return it.
-  * 
-  * @param  given a row and a column.
-  * @return returns a DOM object that represents the randomly selected tile.
-  */
+   * Finds all the neighbors for the given row and column. These neighbors are the
+   * ones that are directly to the left, right, down, and up of the specified
+   * row/column. After that, it will randomly select one of these neighbors and
+   * return it.
+   * 
+   * @param  given a row and a column.
+   * @return returns a DOM object that represents the randomly selected tile.
+   */
   function randomNeighborSelector(row, column) {
     row = parseInt(row) / 100 + 1;
     column = parseInt(column) / 100 + 1;
@@ -116,14 +112,14 @@
   }
 
   /**
-  * This function is used to determine weather not a given tile is neighbors
-  * of an empty square and therefore moveable.
-  * 
-  * @param  the tile of the puzzleboard denoted as 'tile'.
-  * @return returns true if the given tile is a neighbor of the
-  *         empty square (they share one side/border on the puzzleboard), otherwise,
-  *         returns false.
-  */
+   * This function is used to determine weather not a given tile is neighbors
+   * of an empty square and therefore moveable.
+   * 
+   * @param  the tile of the puzzleboard denoted as 'tile'.
+   * @return returns true if the given tile is a neighbor of the
+   *         empty square (they share one side/border on the puzzleboard), otherwise,
+   *         returns false.
+   */
   function moveableTile(tile) {
     let tileRow = parseInt(tile.style.top) / 100 + 1;
     let tileColumn = parseInt(tile.style.left) / 100 + 1;
@@ -138,15 +134,15 @@
   }
 
   /**
-  * Given a pieace of puzzleboard 'tile', moves the tile from its current
-  * position to the empty square's location only if the given tile is
-  * movable (meaning that it is a neighbor of the empty square). The
-  * tile's old positions becomes the empty square's new position.
-  * Nothing happens if the tile clicked on cannot be moved.
-  * 
-  * @param  the tile of the puzzleboard denoted as 'tile'.
-  * @return no return type for this function.
-  */
+   * Given a pieace of puzzleboard 'tile', moves the tile from its current
+   * position to the empty square's location only if the given tile is
+   * movable (meaning that it is a neighbor of the empty square). The
+   * tile's old positions becomes the empty square's new position.
+   * Nothing happens if the tile clicked on cannot be moved.
+   * 
+   * @param  the tile of the puzzleboard denoted as 'tile'.
+   * @return no return type for this function.
+   */
   function moveTile(tile) {
     if(moveableTile(tile)) {
       let placeholdLeftPosition = tile.style.left;
@@ -165,11 +161,11 @@
   }
 
   /**
-  * Helper function to get the element by id.
-  * 
-  * @param  the string ID of the DOM element to retrieve
-  * @return the DOM element denoted by the ID given
-  */
+   * Helper function to get the element by id.
+   * 
+   * @param  the string ID of the DOM element to retrieve
+   * @return the DOM element denoted by the ID given
+   */
   function $(id) {
     return document.getElementById(id);
   }
